@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.composer-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  background: radial-gradient(circle at 20% 20%, #1c1e26 0%, #0c0d11 55%, #08090c 100%);
+  font-family: "Inter", sans-serif;
+  color: #f2f2f5;
+  transition: background 0.6s ease;
+}
+
+.composer-card {
+  width: 100%;
+  max-width: 620px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  animation: rise 0.5s ease;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.composer-header h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 32px;
+  margin: 0;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background 0.5s ease;
+}
+
+.composer-sub {
+  margin: 4px 0 24px;
+  color: #9a9aa5;
+  font-size: 14px;
+}
+
+.platform-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.platform-tab {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #cfcfd6;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.platform-tab:hover {
+  transform: translateY(-2px);
+}
+
+.platform-tab.active {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 18px -6px var(--accent-color);
+}
+
+.editor-shell {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.25);
+  transition: border-color 0.3s ease;
+}
+
+.editor-shell:focus-within {
+  border-color: var(--accent-color);
+}
+
+.editor {
+  width: 100%;
+  min-height: 130px;
+  resize: vertical;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f2f2f5;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+}
+
+.editor::placeholder {
+  color: #6b6b75;
+}
+
+.attachment-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.attachment-chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  max-width: 160px;
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.attachment-chip img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.file-icon {
+  font-size: 16px;
+}
+
+.attachment-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #d8d8de;
+}
+
+.remove-chip {
+  background: none;
+  border: none;
+  color: #a0a0aa;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.remove-chip:hover {
+  color: #ff6b6b;
+}
+
+.editor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.attach-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d8d8de;
+  border-radius: 10px;
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.attach-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.char-meter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ring-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 3;
+}
+
+.ring-fill {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.2s ease, stroke 0.2s ease;
+}
+
+.char-count {
+  font-size: 12px;
+  color: #9a9aa5;
+  font-variant-numeric: tabular-nums;
+}
+
+.char-count.over {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.error-text {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin: 10px 2px 0;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.ghost-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  color: #e6e6ea;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ghost-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.ghost-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.post-btn {
+  flex: 1.4;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent-gradient);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 10px 24px -10px var(--accent-color);
+}
+
+.post-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.post-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 28px 0 18px;
+}
+
+.drafts-title {
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.empty-text {
+  color: #7a7a84;
+  font-size: 14px;
+}
+
+.draft-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.draft-card {
+  position: relative;
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  animation: pop 0.25s ease;
+}
+
+.draft-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.draft-content {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #d8d8de;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.draft-attach-count {
+  font-size: 12px;
+  color: #9a9aa5;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff8080;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.delete-btn:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .composer-card {
+    padding: 22px;
+  }
+}

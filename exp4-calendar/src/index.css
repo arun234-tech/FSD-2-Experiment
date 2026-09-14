@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  color: #222222;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: #222222;
+}
+
+/* ================================
+   FULLCALENDAR TEXT VISIBILITY
+   ================================ */
+
+.fc {
+  color: #222222;
+  font-family: Arial, sans-serif;
+}
+
+.fc-event {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border: none !important;
+}
+
+.fc-event-title,
+.fc-event-time {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.fc-daygrid-event {
+  white-space: normal !important;
+  padding: 3px 5px !important;
+}
+
+.fc-daygrid-event-dot {
+  display: none;
+}
+
+/* Make calendar date numbers clearly visible */
+.fc-daygrid-day-number {
+  color: #222222 !important;
+  font-weight: 600;
+}
+
+/* Calendar headings */
+.fc-col-header-cell-cushion {
+  color: #222222 !important;
+  font-weight: 600;
+}
+
+/* Calendar buttons */
+.fc-button {
+  font-weight: 600 !important;
+}

@@ -37,9 +37,11 @@ function Dashboard() {
         </>
       )}
 
-      {(role === "Admin" || role === "Editor") && (
+      {role === "Editor" && (
         <>
-          <button>Edit Content</button>
+          <button onClick={() => navigate("/editor")}>
+            Editor Dashboard
+          </button>
 
           <br /><br />
         </>
@@ -48,6 +50,12 @@ function Dashboard() {
       {role === "Viewer" && (
         <p>You have view-only access.</p>
       )}
+
+      {role === "Admin" || role === "Editor" ? (
+        <button>Edit Content</button>
+      ) : null}
+
+      <br /><br />
 
       <button onClick={logout}>Logout</button>
     </div>

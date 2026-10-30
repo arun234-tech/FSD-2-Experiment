@@ -17,7 +17,7 @@ This experiment demonstrates how to build an **Event-Driven Architecture (EDA)**
 
 ### 1. Start Kafka (KRaft Mode)
 We use Docker to run Kafka without Zookeeper.
-1. Navigate to the `exp_8_code` directory.
+1. Navigate to the `24bai70730 exp 8` directory at the repository root.
 2. Run the following command to start Kafka:
    ```bash
    docker-compose up -d
@@ -25,7 +25,7 @@ We use Docker to run Kafka without Zookeeper.
    *This starts a Kafka broker locally on port 9092.*
 
 ### 2. Start the Spring Boot Backend
-1. Open a terminal and navigate to `exp_8_code/backend`.
+1. Open a terminal and navigate to `24bai70730 exp 8/backend`.
 2. Run the application:
    ```bash
    ./mvnw spring-boot:run
@@ -33,7 +33,7 @@ We use Docker to run Kafka without Zookeeper.
    *(Or run it from your IDE)*. The backend will start on port `8080`.
 
 ### 3. Start the React Frontend
-1. Open a new terminal and navigate to `exp_8_code/frontend`.
+1. Open a new terminal and navigate to `24bai70730 exp 8/frontend`.
 2. Install dependencies (if not already installed):
    ```bash
    npm install
